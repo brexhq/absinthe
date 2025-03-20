@@ -103,7 +103,7 @@ defmodule Absinthe.Type.BuiltIns.Introspection do
     field :kind,
       type: :string,
       resolve: fn _, %{source: %{__struct__: type}} ->
-        {:ok, type.kind}
+        {:ok, type.kind()}
       end
 
     field :name, :string

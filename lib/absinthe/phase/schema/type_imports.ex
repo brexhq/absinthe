@@ -31,7 +31,7 @@ defmodule Absinthe.Phase.Schema.TypeImports do
   end
 
   defp do_imports([{module, opts} | rest], acc) do
-    [other_def] = module.__absinthe_blueprint__.schema_definitions
+    [other_def] = module.__absinthe_blueprint__().schema_definitions
 
     rejections = MapSet.new([:query, :mutation, :subscription] ++ Keyword.get(opts, :except, []))
 
